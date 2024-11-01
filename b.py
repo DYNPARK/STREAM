@@ -4,8 +4,18 @@ import streamlit as st
 from streamlit_webrtc import webrtc_streamer
 from ultralytics import YOLO
 
+
+
+
+
+
+
 # YOLOv8 모델 로드 (사전 학습된 'yolov8n' 모델 사용)
-model = YOLO('yolov8n.pt')  # 'yolov8n.pt' 대신 적절한 모델 경로를 입력하세요
+# model = YOLO('yolov8n.pt')  # 'yolov8n.pt' 대신 적절한 모델 경로를 입력하세요( 로컬에서 할 때 추가)
+from huggingface_hub import hf_hub_download
+# YOLO 모델 파일 다운로드
+model_path = hf_hub_download(repo_id="ultralytics/yolov8", filename="yolov8n.pt")
+
 
 st.title("Real-Time Object Detection with YOLOv8 and WebRTC")
 

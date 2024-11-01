@@ -3,3 +3,4 @@ opencv-python
 streamlit
 streamlit-webrtc
 ultralytics
+huggingface_hub
